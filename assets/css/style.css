@@ -1,0 +1,130 @@
+/* 
+   Urmila Jagdale Portfolio - Corporate Redesign 
+   Aesthetic: Minimal, Professional, Structured (Microsoft/NVIDIA-inspired)
+*/
+
+:root {
+    --primary: #001f3f; /* Navy */
+    --accent: #2563eb;  /* Blue */
+    --bg-light: #f8fafc;
+    --card-bg-light: #ffffff;
+    --text-main: #1e293b; /* Slate 800 */
+    --text-muted: #64748b; /* Slate 500 */
+    --border: #e2e8f0;
+}
+
+.dark {
+    --bg-light: #0f172a; /* Slate 900 */
+    --card-bg-light: #1e293b; /* Slate 800 */
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --primary: #38bdf8; /* Lighter Blue for Dark Mode visibility */
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+/* Navbar Sticky & Professional */
+nav {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.dark nav {
+    background: rgba(15, 23, 42, 0.8);
+}
+
+/* Structured Card Layout */
+.card-structured {
+    background: var(--card-bg-light);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-structured:hover {
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+    border-color: var(--accent);
+}
+
+/* Professional Section Separation */
+section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* Reduced Animations - Smooth only */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.6s ease-out;
+}
+
+.reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Typing Cursor - Subtle */
+.cursor-blink {
+    border-right: 2px solid var(--accent);
+    animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent) }
+}
+
+/* Mobile Menu - Minimal Overlay */
+#mobile-menu {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    pointer-events: none;
+    background: var(--bg-light);
+}
+
+#mobile-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+}
+
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* Skill Progress - Corporate Style */
+.skill-track {
+    background: #e2e8f0;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.dark .skill-track {
+    background: #334155;
+}
+
+.skill-bar {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    width: 0;
+    transition: width 1s cubic-bezier(0.65, 0, 0.35, 1);
+}

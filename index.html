@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urmila Jagdale | Embedded Automation & Protocol Specialist</title>
+    <meta name="description" content="Embedded Software Engineer with 4+ years of experience specializing in Industrial Automation, Communication Protocols, and Safety-Critical Systems. Expert in Modbus, RTOS, and Linux.">
+    <meta name="keywords" content="Embedded Systems, Industrial Automation, Communication Protocols, Modbus, C++, RTOS, Linux, HMI, ARINC429, AFDX">
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            50: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            950: '#082f49',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
+                            '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 font-sans">
+    
+    <!-- Custom Cursor (Optional but premium) -->
+    <div id="cursor" class="fixed w-6 h-6 border-2 border-primary-500 rounded-full pointer-events-none z-[9999] opacity-0 transition-opacity duration-300 hidden md:block"></div>
+    <div id="cursor-blur" class="fixed w-40 h-40 bg-primary-500/20 rounded-full pointer-events-none z-[9998] blur-3xl opacity-0 transition-opacity duration-300 hidden md:block"></div>
+
+    <!-- Professional Sticky Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-[120] w-full px-6 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 flex items-center justify-between transition-all duration-300">
+        <a href="#" class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">Urmila <span class="text-accent">Jagdale</span></a>
+        
+        <ul class="hidden md:flex items-center gap-10 font-semibold text-xs uppercase tracking-widest text-slate-600 dark:text-slate-400">
+            <li><a href="#about" class="hover:text-accent transition-colors">About</a></li>
+            <li><a href="#expertise" class="hover:text-accent transition-colors">Expertise</a></li>
+            <li><a href="#experience" class="hover:text-accent transition-colors">Experience</a></li>
+            <li><a href="#projects" class="hover:text-accent transition-colors">Projects</a></li>
+            <li><a href="#contact" class="hover:text-accent transition-colors">Contact</a></li>
+        </ul>
+
+        <div class="flex items-center gap-4">
+            <button id="theme-toggle" class="p-2 text-slate-500 hover:text-accent transition-colors" aria-label="Toggle Theme">
+                <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+                <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+            </button>
+            <a href="assets/docs/Urmila_Jagdale_Resume.pdf" download class="px-5 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-md text-xs font-bold uppercase tracking-wide hover:bg-accent dark:hover:bg-accent transition-colors">Resume</a>
+            <button id="mobile-menu-trigger" class="md:hidden text-slate-900 dark:text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-slate-50 dark:bg-slate-950">
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="mb-10 inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 text-[10px] font-bold text-accent uppercase tracking-[0.2em] shadow-sm">
+                <span class="flex h-2 w-2">
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+                Actively Open to Opportunities
+            </div>
+            
+            <h1 class="text-4xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-8">
+                Embedded Software Engineer <br class="hidden md:block">
+                <span class="text-accent underline decoration-slate-200 dark:decoration-slate-800">Automation & Protocol Specialist</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl font-medium text-slate-500 dark:text-slate-400 mb-6 h-12">
+                <span id="typing-text"></span><span class="cursor-blink"></span>
+            </p>
+
+            <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                4+ Years building reliable embedded systems across <span class="text-slate-900 dark:text-white font-semibold italic">Industrial Automation, Communication Protocols,</span> and Aerospace domains.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="#projects" class="px-10 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold tracking-wide rounded-md shadow-lg hover:bg-accent dark:hover:bg-accent dark:hover:text-white transition-all transform hover:-translate-y-1">
+                    View Project Portfolio
+                </a>
+                <a href="assets/docs/Urmila_Jagdale_Resume.pdf" download class="px-10 py-4 border border-slate-300 dark:border-slate-700 font-bold tracking-wide text-slate-900 dark:text-white rounded-md hover:border-accent hover:text-accent transition-all flex items-center gap-2">
+                    <i data-lucide="download" class="w-5 h-5"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-20">
+                <div class="w-full lg:w-5/12">
+                    <div class="relative">
+                        <div class="absolute -inset-1 bg-slate-200 dark:bg-slate-800 rounded-lg"></div>
+                        <div class="relative bg-slate-100 dark:bg-slate-800 aspect-[4/5] overflow-hidden transition-all duration-700">
+                            <img src="assets/img/profile.jpg" alt="Urmila Jagdale" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-7/12">
+                    <p class="section-label mb-4">Professional Profile</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-8">
+                        Delivering reliability in complex <span class="text-accent">embedded environments.</span>
+                    </h2>
+                    <div class="space-y-6 text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+                        <p>
+                            I am an Embedded Software Engineer with <span class="font-bold text-slate-900 dark:text-white">4+ years of specialized experience</span> in safety-critical systems, real-time automation, and communication protocol implementation.
+                        </p>
+                        <p>
+                            My expertise lies in the <span class="font-bold">End-to-End SDLC</span> of embedded products. I bridge the gap between low-level firmware and high-level industrial integration, ensuring seamless data flow and system stability across diverse hardware platforms.
+                        </p>
+                        <p>
+                            While my background includes developing flight-critical modules for <span class="font-semibold text-slate-900 dark:text-white">Airbus A320/A350</span>, my primary focus is now centered on <span class="text-accent font-bold">Industrial Automation and Communication Protocols</span>, where I solve complex integration challenges for modern manufacturing and IoT ecosystems.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-10 mt-12 pt-12 border-t border-slate-100 dark:border-slate-800">
+                        <div>
+                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Domain</p>
+                            <p class="font-bold text-slate-900 dark:text-white">Industrial Automation</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Expertise</p>
+                            <p class="font-bold text-slate-900 dark:text-white">Comm. Protocols</p>
+                        </div>
+                        <div class="hidden md:block">
+                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Education</p>
+                            <p class="font-bold text-slate-900 dark:text-white">PG DESD (Sunbeam)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Expertise Section -->
+    <section id="expertise" class="py-24 bg-slate-50 dark:bg-slate-950">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="section-label mb-2">Capabilities</p>
+                <h2 class="text-4xl font-bold text-slate-900 dark:text-white">Core Expertise</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Embedded Systems -->
+                <div class="card-structured p-10 flex flex-col items-start">
+                    <div class="w-14 h-14 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-accent mb-8">
+                        <i data-lucide="cpu" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Embedded Systems</h3>
+                    <ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent"></i> RTOS & Embedded Linux</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Firmware Development (C/C++)</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Peripheral Interfacing</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Memory Content Optimization</li>
+                    </ul>
+                </div>
+
+                <!-- Industrial Automation -->
+                <div class="card-structured p-10 flex flex-col items-start">
+                    <div class="w-14 h-14 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-orange-500 mb-8">
+                        <i data-lucide="settings" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Industrial Automation</h3>
+                    <ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-orange-500"></i> HMI Systems (Qt, LVGL)</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-orange-500"></i> Machine-level Integration</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-orange-500"></i> Real-time Monitoring Systems</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-orange-500"></i> Factory Floor Data Acquisition</li>
+                    </ul>
+                </div>
+
+                <!-- Communication Protocols -->
+                <div class="card-structured p-10 flex flex-col items-start border-accent/20">
+                    <div class="w-14 h-14 bg-blue-50 dark:bg-blue-900/20 rounded-lg flex items-center justify-center text-accent mb-8">
+                        <i data-lucide="share-2" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Comm. Protocols</h3>
+                    <ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Modbus (TCP/RTU/Serial)</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent"></i> UART, SPI, I2C, RS232/485</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent"></i> ARINC429 & AFDX Stack</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Network Gateway Integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-32 bg-white dark:bg-slate-950">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/3">
+                    <h2 class="text-xs font-bold text-primary-600 dark:text-primary-400 tracking-[0.2em] uppercase mb-4">Milestones</h2>
+                    <h3 class="text-4xl font-display font-bold mb-6">Achievements & Highlights</h3>
+                    <p class="text-slate-500 dark:text-slate-400">Key accomplishments that define my professional impact in the embedded engineering space.</p>
+                </div>
+                <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="p-8 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 flex gap-6 group hover:border-primary-500 transition-colors">
+                        <div class="text-4xl font-display font-bold text-primary-600/20 group-hover:text-primary-600 transition-colors">01</div>
+                        <div>
+                            <h4 class="font-bold mb-2">4+ Years Experience</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Proven track record in end-to-end embedded system development.</p>
+                        </div>
+                    </div>
+                    <div class="p-8 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 flex gap-6 group hover:border-primary-500 transition-colors">
+                        <div class="text-4xl font-display font-bold text-primary-600/20 group-hover:text-primary-600 transition-colors">02</div>
+                        <div>
+                            <h4 class="font-bold mb-2">Airbus A320/A350</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Direct contribution to safety-critical flight management modules.</p>
+                        </div>
+                    </div>
+                    <div class="p-8 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 flex gap-6 group hover:border-primary-500 transition-colors">
+                        <div class="text-4xl font-display font-bold text-primary-600/20 group-hover:text-primary-600 transition-colors">03</div>
+                        <div>
+                            <h4 class="font-bold mb-2">Protocol Expertise</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Advanced mastery of ARINC, AFDX, Modbus, and industrial comms.</p>
+                        </div>
+                    </div>
+                    <div class="p-8 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 flex gap-6 group hover:border-primary-500 transition-colors">
+                        <div class="text-4xl font-display font-bold text-primary-600/20 group-hover:text-primary-600 transition-colors">04</div>
+                        <div>
+                            <h4 class="font-bold mb-2">Multi-Domain Impact</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Success across Aerospace, Industrial Automation, and IoT sectors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-white dark:bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="section-label mb-2">Professional Journey</p>
+                <h2 class="text-4xl font-bold text-slate-900 dark:text-white">Experience Timeline</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-12">
+                <!-- Renu Electronics (Primary Highlight) -->
+                <div class="flex flex-col md:flex-row gap-8 pb-12 border-b border-slate-100 dark:border-slate-800">
+                    <div class="md:w-1/4">
+                        <p class="font-bold text-slate-900 dark:text-white">Mar 2023 – Present</p>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1">Industrial & HMI</p>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Software Engineer (R&D)</h3>
+                        <p class="text-accent font-bold mb-4">Renu Electronics Pvt Ltd</p>
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-accent mt-0.5"></i> Developed real-time HMI solutions utilizing Qt and LVGL for large-scale industrial automation.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-accent mt-0.5"></i> Managed the integration of machine-level communication systems on Embedded Linux platforms.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-accent mt-0.5"></i> Optimized terminal interactions and diagnostic tools to reduce field debugging time by 25%.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-accent mt-0.5"></i> Expert handling of Modbus (TCP/Serial) and RS485 communication for distributed monitoring.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- L&T Technology Services -->
+                <div class="flex flex-col md:flex-row gap-8 pb-12 border-b border-slate-100 dark:border-slate-800">
+                    <div class="md:w-1/4">
+                        <p class="font-bold text-slate-900 dark:text-white">Jul 2023 – Feb 2024</p>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1">Systems Integration</p>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Software Engineer</h3>
+                        <p class="text-slate-500 font-bold mb-4 uppercase text-xs tracking-widest">L&T Technology Services</p>
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-slate-400 mt-0.5"></i> Bridged high-level software application logic with low-level peripheral drivers.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-slate-400 mt-0.5"></i> Focused on memory optimization and real-time responsiveness for IoT gateway devices.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-slate-400 mt-0.5"></i> Resolved critical system-level defects during complex integration phases for global clients.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Honeywell Aerospace -->
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/4">
+                        <p class="font-bold text-slate-900 dark:text-white">Nov 2021 – Jun 2023</p>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1">Safety-Critical</p>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Embedded Engineer</h3>
+                        <p class="text-slate-500 font-bold mb-4 uppercase text-xs tracking-widest">Honeywell Aerospace</p>
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-slate-400 mt-0.5"></i> Implemented communication stacks (ARINC429, AFDX) for Airbus A320/A350 Flight Management.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-slate-400 mt-0.5"></i> Ensured strict adherence to safety standards and DO-178C guidelines.</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-slate-400 mt-0.5"></i> Executed HIL testing and low-level firmware debugging on mission-critical hardware.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-slate-50 dark:bg-slate-950">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="section-label mb-2">Technical Portfolio</p>
+                <h2 class="text-4xl font-bold text-slate-900 dark:text-white">Featured Impact</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Renu Industrial HMI -->
+                <div class="card-structured group overflow-hidden">
+                    <div class="py-12 bg-slate-100 dark:bg-slate-800 flex items-center justify-center relative">
+                        <i data-lucide="monitor" class="w-20 h-20 text-accent opacity-20"></i>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-2xl font-bold mb-4">Renu Industrial HMI</h4>
+                        <div class="space-y-4 mb-8 text-sm text-slate-600 dark:text-slate-400">
+                            <p><span class="font-bold text-slate-900 dark:text-white uppercase text-[10px] tracking-widest block mb-2">Problem:</span> Managing complex industrial variables with high-latency legacy UI.</p>
+                            <p><span class="font-bold text-slate-900 dark:text-white uppercase text-[10px] tracking-widest block mb-1">My Contribution:</span> Developed high-performance HMI platform using <span class="font-bold text-accent">Qt & LVGL</span> on Embedded Linux.</p>
+                            <p><span class="font-bold text-slate-900 dark:text-white uppercase text-[10px] tracking-widest block mb-1">Impact:</span> Reduced boot time by 20% and UI latency by 30% for global industrial clients.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-8 text-[10px] font-bold">
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">Qt/C++</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">Embedded Linux</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">RS485</span>
+                        </div>
+                        <button class="project-details-btn text-accent font-bold text-sm tracking-wide uppercase flex items-center gap-2 group-hover:gap-3 transition-all" data-project="renu-hmi">
+                            Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Comm. Protocol Gateway -->
+                <div class="card-structured group overflow-hidden">
+                    <div class="py-12 bg-slate-100 dark:bg-slate-800 flex items-center justify-center relative">
+                        <i data-lucide="share-2" class="w-20 h-20 text-orange-500 opacity-20"></i>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-2xl font-bold mb-4">Protocol Gateway</h4>
+                        <div class="space-y-4 mb-8 text-sm text-slate-600 dark:text-slate-400">
+                            <p><span class="font-bold text-slate-900 dark:text-white uppercase text-[10px] tracking-widest block mb-2">Problem:</span> Lack of seamless data exchange between Modbus-based machinery and cloud analytics.</p>
+                            <p><span class="font-bold text-slate-900 dark:text-white uppercase text-[10px] tracking-widest block mb-1">My Contribution:</span> Implemented multi-channel <span class="font-bold text-orange-600">Modbus TCP/RTU</span> stacks on STM32 hardware.</p>
+                            <p><span class="font-bold text-slate-900 dark:text-white uppercase text-[10px] tracking-widest block mb-1">Impact:</span> Enabled real-time synchronization of 200+ edge nodes to central ERP system.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-8 text-[10px] font-bold">
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">Modbus</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">STM32</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">FreeRTOS</span>
+                        </div>
+                        <button class="project-details-btn text-orange-600 font-bold text-sm tracking-wide uppercase flex items-center gap-2 group-hover:gap-3 transition-all" data-project="protocol-gateway">
+                            Engineering Specs <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: Honeywell NFMS -->
+                <div class="card-structured group overflow-hidden opacity-80 hover:opacity-100 transition-opacity">
+                    <div class="py-12 bg-slate-100 dark:bg-slate-800 flex items-center justify-center relative">
+                        <i data-lucide="plane" class="w-20 h-20 text-slate-500 opacity-20"></i>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-2xl font-bold mb-4">Honeywell NFMS</h4>
+                        <div class="space-y-4 mb-8 text-sm text-slate-600 dark:text-slate-400">
+                            <p><span class="font-bold text-slate-900 dark:text-white uppercase text-[10px] tracking-widest block mb-2">Role:</span> Safety-Critical Comm Implementation.</p>
+                            <p><span class="font-bold text-slate-900 dark:text-white uppercase text-[10px] tracking-widest block mb-1">Impact:</span> Developed and verified ARINC429 communication modules for Airbus platforms.</p>
+                            <p><span class="font-bold text-slate-900 dark:text-white uppercase text-[10px] tracking-widest block mb-1">Compliance:</span> Achieved zero critical non-conformities in DO-178C audits.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-8 text-[10px] font-bold">
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">ARINC429</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">A320/A350</span>
+                            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded uppercase">Safety</span>
+                        </div>
+                        <button class="project-details-btn text-slate-500 font-bold text-sm tracking-wide uppercase flex items-center gap-2 group-hover:gap-3 transition-all" data-project="honeywell-nfms">
+                            Documentation <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section id="value" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <p class="section-label text-accent mb-4">Value Proposition</p>
+                    <h2 class="text-4xl font-bold mb-8">What I Bring</h2>
+                    <p class="text-slate-400 text-lg mb-10 leading-relaxed">
+                        Beyond just code, I bring deep domain knowledge and a rigorous engineering mindset to every project. My unique cross-industry transition from Aerospace to Industrial Automation ensures superior reliability and system performance.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="flex gap-4">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-accent shrink-0"></i>
+                            <p class="text-sm font-medium">Strong expertise in <span class="text-white">embedded communication protocols</span> and interface logic.</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <i data-lucide="zap" class="w-6 h-6 text-accent shrink-0"></i>
+                            <p class="text-sm font-medium"><span class="text-white">Proven ability</span> to debug and optimize memory-constrained embedded systems.</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <i data-lucide="layout" class="w-6 h-6 text-accent shrink-0"></i>
+                            <p class="text-sm font-medium">Hands-on experience in high-reliability <span class="text-white">industrial automation & HMI</span> systems.</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <i data-lucide="globe" class="w-6 h-6 text-accent shrink-0"></i>
+                            <p class="text-sm font-medium">Domain expertise across <span class="text-white">Industrial, Aerospace, and IoT</span> sectors.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative hidden lg:block">
+                    <div class="absolute inset-0 bg-accent/20 blur-3xl rounded-full"></div>
+                    <div class="relative p-10 bg-slate-800/50 backdrop-blur-md border border-white/10 rounded-3xl">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="font-mono text-sm space-y-2 text-slate-300">
+                            <p><span class="text-accent">while</span>(systemConnected) {</p>
+                            <p class="pl-4 text-green-400">// Primary Focus: Reliability</p>
+                            <p class="pl-4">monitorProtocols(<span class="text-orange-400">MODBUS_TCP</span>);</p>
+                            <p class="pl-4">optimizeMemoryUsage();</p>
+                            <p class="pl-4">ensureRealTimeResponse();</p>
+                            <p>}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white dark:bg-slate-900">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="card-structured p-12 text-center">
+                <p class="section-label mb-4">Availability</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-8">Let's build reliable systems together.</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-lg mb-12 max-w-2xl mx-auto">
+                    I am actively seeking roles where I can leverage my expertise in <span class="text-slate-900 dark:text-white font-bold">Embedded Systems & Communication Protocols</span> to drive industrial innovation.
+                </p>
+                
+                <div class="flex flex-col items-center justify-center gap-8">
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-8 flex-wrap">
+                        <a href="mailto:jagdaleurmila98@gmail.com" class="font-bold text-slate-900 dark:text-white hover:text-accent transition-colors flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-accent"></i> jagdaleurmila98@gmail.com
+                        </a>
+                        <div class="hidden sm:block w-px h-6 bg-slate-200 dark:bg-slate-700"></div>
+                        <a href="tel:+918262001961" class="font-bold text-slate-900 dark:text-white hover:text-accent transition-colors flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-accent"></i> +91 8262001961
+                        </a>
+                        <div class="hidden sm:block w-px h-6 bg-slate-200 dark:bg-slate-700"></div>
+                        <a href="https://linkedin.com/in/urmila-jagdale" target="_blank" class="font-bold text-slate-900 dark:text-white hover:text-accent transition-colors flex items-center gap-3">
+                            <i data-lucide="linkedin" class="w-5 h-5 text-accent"></i> urmila-jagdale
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-4 mt-2">
+                        <a href="https://github.com/urmila" target="_blank" class="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-400 hover:text-accent transition-colors">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[110] bg-white dark:bg-slate-900 hidden flex-col items-center justify-center gap-10 text-xl font-bold uppercase tracking-[0.2em] text-slate-900 dark:text-white transition-all duration-300">
+        <a href="#about" class="hover:text-accent transition-colors">About</a>
+        <a href="#expertise" class="hover:text-accent transition-colors">Expertise</a>
+        <a href="#experience" class="hover:text-accent transition-colors">Experience</a>
+        <a href="#projects" class="hover:text-accent transition-colors">Projects</a>
+        <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+        <a href="assets/docs/Urmila_Jagdale_Resume.pdf" download class="mt-4 px-10 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-md text-xs font-bold tracking-widest">Resume</a>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 z-[125] hidden flex items-center justify-center p-6 bg-slate-900/90 backdrop-blur-md">
+        <div class="bg-white dark:bg-slate-800 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl relative">
+            <button id="close-modal" class="absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modal-content" class="p-10 md:p-16">
+                <!-- Data-driven Case Study Content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-950">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] mb-4">&copy; <span id="year"></span> Urmila Jagdale</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 italic">Embedded Automation & Protocol Specialist | Pune, India</p>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
